@@ -1,0 +1,43 @@
+	<?php
+		$st = \DB::table('story_title')->first();
+		$story = \DB::table('story')->orderBy('story_id','asc')->get();
+	?>
+
+	<div id="fh5co-couple-story">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-8 col-md-offset-2 text-center fh5co-heading animate-box">
+					<span>{{ $st->title1 }}</span>
+					<h2>{{ $st->title2 }}</h2>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-12 col-md-offset-0">
+					<ul class="timeline animate-box">
+						@foreach($story as $index=>$rt)
+						<?php
+							$kelas = '';
+							if($index % 2 != 0){
+								$kelas = 'timeline-inverted animate-box';
+							}else{
+								$kelas = 'animate-box';
+							}
+						?>
+						<li class="{{$kelas}}">
+							<div class="timeline-badge" style="background-image:url({{asset('uploads/'.$rt->gambar)}});"></div>
+							<div class="timeline-panel">
+								<div class="timeline-heading">
+									<h3 class="timeline-title">{{ $rt->judul }}</h3>
+									<span class="date">{{ $rt->tanggal }}</span>
+								</div>
+								<div class="timeline-body">
+									<p>{{ $rt->keterangan }}</p>
+								</div>
+							</div>
+						</li>
+						@endforeach
+			    	</ul>
+				</div>
+			</div>
+		</div>
+	</div>

@@ -113,10 +113,10 @@
 			<div class="row">
 			
 				<div class="col-md-8 col-md-offset-2 text-center fh5co-heading animate-box">
-					<h1>Om Swastiastu</h1>
-					<h6>{{ $penganten->salam }}</h6>
-					<h3>{{ $penganten->tanggal }}</h3>
-					<p>{{ $penganten->title }}</p>
+					<h2>Om Swastiastu</h2>
+					<p>{{ $penganten->salam }}</p>
+					{{-- <h3>{{ $penganten->tanggal }}</h3> --}}
+					{{-- <p>{{ $penganten->title }}</p> --}}
 				</div>
 			</div>
 			<div class="couple-wrap animate-box">
@@ -181,7 +181,11 @@
 										<span>{{ $akad->tanggal2 }}</span> --}}
 									</div>
 									<p>{{ $akad->keterangan }}</p>
+
+
+								
 								</div>
+								
 							{{-- </div> --}}
 							{{-- <div class="col-md-6 col-sm-6 text-center">
 								<div class="event-wrap animate-box">
@@ -199,56 +203,18 @@
 									<p>{{ $resepsi->keterangan }}</p>
 								</div>
 							</div> --}}
-						</div>
-					</div>
+							
+							<div class="col-md-8 col-md-offset-2 text-center fh5co-heading animate-box fadeInUp animated-fast"  style="font-size:5px"><h6>Om Shanti Shanti Shanti Om </h6></div>
+						</div>			
+					</div>					
 				</div>
 			</div>
 		</div>
 	</div>
+{{-- -----------------------------------------------------------------------
+							
+----------------------------------------------------------------------- --}}
 
-	<?php
-		$st = \DB::table('story_title')->first();
-		$story = \DB::table('story')->orderBy('story_id','asc')->get();
-	?>
-
-	<div id="fh5co-couple-story">
-		<div class="container">
-			<div class="row">
-				<div class="col-md-8 col-md-offset-2 text-center fh5co-heading animate-box">
-					<span>{{ $st->title1 }}</span>
-					<h2>{{ $st->title2 }}</h2>
-				</div>
-			</div>
-			<div class="row">
-				<div class="col-md-12 col-md-offset-0">
-					<ul class="timeline animate-box">
-						@foreach($story as $index=>$rt)
-						<?php
-							$kelas = '';
-							if($index % 2 != 0){
-								$kelas = 'timeline-inverted animate-box';
-							}else{
-								$kelas = 'animate-box';
-							}
-						?>
-						<li class="{{$kelas}}">
-							<div class="timeline-badge" style="background-image:url({{asset('uploads/'.$rt->gambar)}});"></div>
-							<div class="timeline-panel">
-								<div class="timeline-heading">
-									<h3 class="timeline-title">{{ $rt->judul }}</h3>
-									<span class="date">{{ $rt->tanggal }}</span>
-								</div>
-								<div class="timeline-body">
-									<p>{{ $rt->keterangan }}</p>
-								</div>
-							</div>
-						</li>
-						@endforeach
-			    	</ul>
-				</div>
-			</div>
-		</div>
-	</div>
 
 	{{-- <div id="fh5co-services" class="fh5co-section-gray"> --}}
 		<div class="container">
@@ -257,11 +223,18 @@
 
 				<div class="col-md-8 col-md-offset-2 text-center fh5co-heading">
 					{{-- <h2>{{ \DB::table('jasa_title')->value('title') }}</h2> --}}
+
+
+						{{-- ---------------------------------------------- --}}
+						<h2>Ceremony Location</h2>
+						{{-- ---------------------------------------------- --}}
+						<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d504900.0744275998!2d114.93607802386134!3d-8.640861452838998!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2dd22f46b5370dab%3A0xe56196e191bc8b3e!2sSumerta%20House!5e0!3m2!1sen!2sid!4v1605532075582!5m2!1sen!2sid" frameborder="0" style="width:100%" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+						
 					
 					{{-- ---------------------------------------------- --}}
 					<h2>Our Video</h2>
 					{{-- ---------------------------------------------- --}}
-					<iframe src="https://www.youtube.com/embed/5ikBbwzqvew" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+					<iframe src="https://www.youtube.com/embed/5ikBbwzqvew" frameborder="0" style="width:100% height:100%" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 					<br><br><br>
 							
 					
@@ -341,11 +314,7 @@
 
 				
 					<br><br><br>
-					{{-- ---------------------------------------------- --}}
-					<h2>Ceremony Location</h2>
-					{{-- ---------------------------------------------- --}}
-					<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d504900.0744275998!2d114.93607802386134!3d-8.640861452838998!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2dd22f46b5370dab%3A0xe56196e191bc8b3e!2sSumerta%20House!5e0!3m2!1sen!2sid!4v1605532075582!5m2!1sen!2sid" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
-					
+				
 				</div>
 			</div>
 
@@ -399,15 +368,7 @@
 						<small class="block">Pengantin : <a href="https://www.instagram.com/candragirinata/" target="_blank">Giri</a> & <a href="https://www.instagram.com/ayuyulilestari2/" target="_blank">Ayu</a></small>
 
 					</p>
-					<p>
-						{{-- <ul class="fh5co-social-icons"> --}}
-							{{-- <li><a href="#"><i class="icon-twitter"></i></a></li> --}}
-							{{-- <li><a href="#"><i class="icon-facebook"></i></a></li>
-							<li><a href="#"><i class="icon-linkedin"></i></a></li>
-							<li><a href="#"><i class="icon-dribbble"></i></a></li> --}}
-						{{-- </ul> --}}
 					
-					</p>
 				</div>
 			</div>
 
