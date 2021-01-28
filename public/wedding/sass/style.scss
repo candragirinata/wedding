@@ -382,6 +382,10 @@ h1, h2, h3, h4, h5, h6, figure {
 		}
 	}
 }
+.responsive {
+	width: auto;
+	height: auto;
+  }
 .fh5co-cover {
 	height: 900px;
 	background-size: cover;
@@ -407,11 +411,12 @@ h1, h2, h3, h4, h5, h6, figure {
 	}
 	.display-t,
 	.display-tc {
-		height: 900px;
+		height: 619px;
 		display: table;
 		width: 100%;
 		@media screen and (max-width: $screen-sm) {
 			height: 600px;
+			padding: 0px;
 		}
 	}	
 
@@ -1010,10 +1015,10 @@ form {
 #fh5co-couple,
 #fh5co-gallery,
 .fh5co-section {
-	padding: 7em 0;
+	padding: 0em 0;
 	clear: both;
 	@media screen and (max-width: $screen-sm) {
-		padding: 3em 0;
+		padding: 1em 0;
 	}
 }
 
